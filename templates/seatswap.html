@@ -1,0 +1,13 @@
+<h2>SeatSwap</h2>
+<form method="post">
+  PNR: <input type="text" name="pnr"><br>
+  Current Seat: <input type="text" name="current_seat"><br>
+  Preferred Seat: <input type="text" name="preferred_seat"><br>
+  <button type="submit">Submit</button>
+</form>
+<ul>
+  {% for entry in entries %}
+    <li>{{ entry.pnr }} wants to move from {{ entry.current }} to {{ entry.preferred }}</li>
+  {% endfor %}
+</ul>
+<a href="/">Back</a>

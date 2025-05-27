@@ -1,0 +1,18 @@
+<h2>Lost and Found</h2>
+<form method="post">
+  Type: 
+  <select name="entry_type">
+    <option value="lost">Lost</option>
+    <option value="found">Found</option>
+  </select><br>
+  Description: <input type="text" name="description"><br>
+  Coach: <input type="text" name="coach"><br>
+  Contact: <input type="text" name="contact"><br>
+  <button type="submit">Submit</button>
+</form>
+<ul>
+  {% for entry in entries %}
+    <li>[{{ entry.type|capitalize }}] {{ entry.description }} in {{ entry.coach }} on {{ entry.date }}</li>
+  {% endfor %}
+</ul>
+<a href="/">Back</a>

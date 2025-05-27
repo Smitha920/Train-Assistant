@@ -1,0 +1,12 @@
+<h2>CoachAlert</h2>
+<form method="post">
+  Destination Station: <input type="text" name="station"><br>
+  Alert Before (mins): <input type="number" name="minutes_before"><br>
+  <button type="submit">Set Alert</button>
+</form>
+<ul>
+  {% for alert in alerts %}
+    <li>Alert before {{ alert.station }} by {{ alert.minutes_before }} mins</li>
+  {% endfor %}
+</ul>
+<a href="/">Back</a>

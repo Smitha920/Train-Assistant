@@ -1,0 +1,18 @@
+<h2>TrackGuard</h2>
+<form method="post">
+  Issue Type: 
+  <select name="issue_type">
+    <option>Theft</option>
+    <option>Harassment</option>
+    <option>Medical Emergency</option>
+  </select><br>
+  Details: <textarea name="details"></textarea><br>
+  Coach: <input type="text" name="coach"><br>
+  <button type="submit">Report</button>
+</form>
+<ul>
+  {% for report in reports %}
+    <li>{{ report.type }} in coach {{ report.coach }} - {{ report.details }} [{{ report.timestamp }}]</li>
+  {% endfor %}
+</ul>
+<a href="/">Back</a>
